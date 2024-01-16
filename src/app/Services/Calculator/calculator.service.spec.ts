@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { CalculatorService } from './calculator.service';
+import { LoggerService } from '../Logger/logger.service';
 
 
 describe('CalculatorService', () => {
@@ -15,6 +16,9 @@ describe('CalculatorService', () => {
   });
 
   it('should return addition of two numbers',()=>{
+    const logger = new LoggerService();
+    spyOn(logger,'log');
     expect(service.add(2,2)).toEqual(4);
+    // expect(logger.log).toHaveBeenCalledTimes(1);
   })
 });

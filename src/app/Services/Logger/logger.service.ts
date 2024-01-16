@@ -9,7 +9,7 @@ export class LoggerService {
   constructor() { }
 
 
-  log(message: string) {
+  log(message: string):void {
      console.timeLog(message);
   }
 }
